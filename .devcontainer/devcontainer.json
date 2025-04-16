@@ -1,0 +1,16 @@
+{
+  "name": "AI Infra DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "pip install -r ../ml-model/requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker", "ms-kubernetes-tools.vscode-kubernetes-tools"]
+    }
+  },
+  "mounts": ["source=${localWorkspaceFolder}/terraform,target=/workspace/terraform,type=bind"]
+}
